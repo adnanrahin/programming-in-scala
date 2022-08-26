@@ -1,4 +1,4 @@
-package chapter1
+package org.functional.programming.chapter1
 
 import java.math.BigInteger
 
@@ -14,7 +14,7 @@ object AppOne {
 
     println(capital)
 
-    println(factorial(BigInteger.valueOf(20000)))
+    println(factorial(BigInteger.valueOf(1000)))
 
   }
 
