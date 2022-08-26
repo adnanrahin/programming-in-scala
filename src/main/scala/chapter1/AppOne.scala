@@ -1,5 +1,7 @@
 package chapter1
 
+import java.math.BigInteger
+
 object AppOne {
 
   def main(args: Array[String]): Unit = {
@@ -12,12 +14,14 @@ object AppOne {
 
     println(capital)
 
-    println(factorial(5000))
+    println(factorial(BigInteger.valueOf(20000)))
 
   }
 
-  def factorial(x: BigInt): BigInt = {
-    if (x == 0) 1 else x * factorial(x - 1);
-  }
+  def factorial(x: BigInteger): BigInteger =
+    if (x == BigInteger.ZERO)
+      BigInteger.ONE
+    else
+      x.multiply(factorial(x.subtract(BigInteger.ONE)))
 
 }
