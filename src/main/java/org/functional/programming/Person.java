@@ -1,12 +1,16 @@
 package org.functional.programming;
 
-public class Person {
+
+import java.io.Serializable;
+
+public class Person implements Serializable {
 
     private String name;
     private String address;
     private Integer age;
 
-    public Person(){}
+    public Person() {
+    }
 
     public Person(String name, String address, Integer age) {
         this.name = name;
