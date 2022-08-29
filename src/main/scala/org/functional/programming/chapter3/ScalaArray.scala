@@ -1,6 +1,6 @@
 package org.functional.programming.chapter3
 
-object StarterApp {
+object ScalaArray {
 
   def main(args: Array[String]): Unit = {
 
