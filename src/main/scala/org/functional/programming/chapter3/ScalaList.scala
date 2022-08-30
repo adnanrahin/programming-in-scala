@@ -8,7 +8,9 @@ object ScalaList {
 
     list = 1 :: list
 
-    println(list)
+    val list2 = 1 :: list
+
+    println(list2)
 
   }
 
