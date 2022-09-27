@@ -6,6 +6,8 @@ object FunctionalObject {
 
     val oneHalf = new Rational(1, 2)
 
+    println(oneHalf)
+
   }
 
 }
