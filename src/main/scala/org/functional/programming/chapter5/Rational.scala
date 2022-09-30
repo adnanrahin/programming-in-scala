@@ -1,5 +1,7 @@
 package org.functional.programming.chapter5
 
+import scala.language.implicitConversions
+
 class Rational(n: Int, d: Int) {
   require(d != 0)
   private val g = gcd(n.abs, d.abs)
@@ -14,8 +16,7 @@ class Rational(n: Int, d: Int) {
       denom * that.denom
     )
 
-  def +(i: Int): Rational =
-    new Rational(numer + i * denom, denom)
+  def +(i: Int): Rational = new Rational(numer + i * denom, denom)
 
   def -(that: Rational): Rational =
     new Rational(
@@ -23,23 +24,20 @@ class Rational(n: Int, d: Int) {
       denom * that.denom
     )
 
-  def -(i: Int): Rational =
-    new Rational(numer - i * denom, denom)
+  def -(i: Int): Rational = new Rational(numer - i * denom, denom)
 
-  def *(that: Rational): Rational =
-    new Rational(numer * that.numer, denom * that.denom)
+  def *(that: Rational): Rational = new Rational(numer * that.numer, denom * that.denom)
 
-  def *(i: Int): Rational =
-    new Rational(numer * i, denom)
+  def *(i: Int): Rational = new Rational(numer * i, denom)
 
-  def /(that: Rational): Rational =
-    new Rational(numer * that.denom, denom * that.numer)
+  def /(that: Rational): Rational = new Rational(numer * that.denom, denom * that.numer)
 
-  def /(i: Int): Rational =
-    new Rational(numer, denom * i)
+  def /(i: Int): Rational = new Rational(numer, denom * i)
 
   override def toString = numer + "/" + denom
 
-  private def gcd(a: Int, b: Int): Int =
-    if (b == 0) a else gcd(b, a % b)
+  private def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+
+  implicit def intToRational(x: Int): Rational = new Rational(x)
+
 }
